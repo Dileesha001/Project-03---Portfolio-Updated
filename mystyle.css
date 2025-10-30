@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    background-color: rgb(37, 2, 86);
+}
+
+body{
+    color: #ededed;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo{
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar a{
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+.navbar a:hover{
+    color: rgb(101, 5, 236);
+}
+.home{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url(Images/solid-navy-blue-concrete-textured-wall.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
