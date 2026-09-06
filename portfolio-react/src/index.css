@@ -1,0 +1,148 @@
+﻿/* ============================================
+   DILEESHA RAVISHAN PORTFOLIO - GLOBAL CSS
+   Deep Purple Theme: #0d0120 / #6505ec
+============================================ */
+
+:root {
+  --bg-primary:    #0d0120;
+  --bg-secondary:  #160235;
+  --bg-card:       #1a0340;
+  --accent:        #6505ec;
+  --accent-light:  #8b3eff;
+  --accent-glow:   rgba(101, 5, 236, 0.3);
+  --text-primary:  #f0e6ff;
+  --text-secondary:#b8a9d4;
+  --text-muted:    #7a6a9a;
+  --white:         #ffffff;
+  --border:        rgba(101, 5, 236, 0.25);
+  --glass:         rgba(255, 255, 255, 0.04);
+  --transition:    all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-glow:   0 0 40px rgba(101, 5, 236, 0.4);
+  --radius:        16px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* ---- Shared Utilities ---- */
+.section { padding: 100px 8%; }
+.section-header { text-align: center; margin-bottom: 60px; }
+
+.section-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: rgba(101, 5, 236, 0.12);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -1px;
+}
+
+.highlight { color: var(--accent-light); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--white);
+  box-shadow: 0 6px 30px var(--accent-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(101, 5, 236, 0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--accent-light);
+  background: var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+/* ---- Social Icons ---- */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 16px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.social-icon:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+/* ---- Reveal Animation ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 900px) {
+  .section { padding: 80px 6%; }
+}
+@media (max-width: 600px) {
+  .section { padding: 70px 5%; }
+}

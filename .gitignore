@@ -1,0 +1,17 @@
+﻿# Dependencies
+node_modules/
+portfolio-react/node_modules/
+
+# Build output
+dist/
+portfolio-react/dist/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.local
+.env
+.env.*
+
+# Vite
+*.cache

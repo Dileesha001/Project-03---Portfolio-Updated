@@ -1,0 +1,26 @@
+﻿.back-to-top {
+  position: fixed;
+  bottom: 30px; right: 30px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--white);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  z-index: 999;
+  pointer-events: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.back-to-top:hover { transform: translateY(-4px); box-shadow: 0 14px 35px var(--accent-glow); }
