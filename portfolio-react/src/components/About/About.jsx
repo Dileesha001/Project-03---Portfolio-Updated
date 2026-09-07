@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./About.css";
 import profileImg from "../../assets/profile.jpg";
 
@@ -42,10 +42,10 @@ export default function About() {
           </div>
           <div className="about-info-grid">
             {[
-              ["fa-envelope","Email","dileesha@email.com"],
-              ["fa-map-marker-alt","Location","Sri Lanka"],
+              ["fa-envelope","Email","ravishan.dileesha@email.com"],
+              ["fa-map-marker-alt","Location","Gampaha, Sri Lanka"],
               ["fa-briefcase","Status","Available for hire","available"],
-              ["fa-graduation-cap","Degree","BSc in IT"],
+              ["fa-graduation-cap","Degree","BSc (Hons) in Information Systems"],
             ].map(([icon,label,value,cls]) => (
               <div className="info-item" key={label}>
                 <span className="info-label"><i className={`fas ${icon}`} /> {label}</span>
@@ -53,7 +53,7 @@ export default function About() {
               </div>
             ))}
           </div>
-          <a href="#" className="btn btn-primary"><i className="fas fa-download" /> Download CV</a>
+          <a href="/CV/CV (1).pdf" download="Dileesha_Ravishan_CV.pdf" className="btn btn-primary"><i className="fas fa-download" /> Download CV</a>
         </div>
       </div>
     </section>

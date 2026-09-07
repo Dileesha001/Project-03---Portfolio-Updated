@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Contact.css";
 
 export default function Contact() {
@@ -41,9 +41,9 @@ export default function Contact() {
           <p>I am currently available for freelance work and open to exciting new opportunities. Have a project in mind or just want to say hi? Reach out!</p>
           <div className="contact-cards">
             {[
-              {icon:"fa-envelope", label:"Email",    href:"mailto:dileesha@email.com", val:"dileesha@email.com"},
-              {icon:"fa-phone",    label:"Phone",    href:"tel:+94000000000",          val:"+94 000 000 000"},
-              {icon:"fa-map-marker-alt", label:"Location", href:null,                 val:"Sri Lanka"},
+              {icon:"fa-envelope", label:"Email",    href:"mailto:ravishan.dileesha@email.com", val:"ravishan.dileesha@email.com"},
+              {icon:"fa-phone",    label:"Phone",    href:"tel:+94713108396",          val:"+94 71 310 8396"},
+              {icon:"fa-map-marker-alt", label:"Location", href:null,                 val:"Gampaha, Sri Lanka"},
             ].map(c => (
               <div className="contact-card" key={c.label}>
                 <div className="contact-card-icon"><i className={`fas ${c.icon}`} /></div>
