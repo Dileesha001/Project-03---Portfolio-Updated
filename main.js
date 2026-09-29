@@ -1,4 +1,4 @@
-﻿/* ===================================
+/* ===================================
    DILEESHA RAVISHAN - PORTFOLIO JS
 =================================== */
 
@@ -125,6 +125,102 @@ filterBtns.forEach(btn => {
             }
         });
     });
+});
+
+
+// ---- Project Detail Modal ----
+const modalOverlay   = document.getElementById('projectModalOverlay');
+const modalTitle     = document.getElementById('modalTitle');
+const modalDesc      = document.getElementById('modalDesc');
+const modalTags      = document.getElementById('modalTags');
+const modalActions   = document.getElementById('modalActions');
+const modalIconWrap  = document.getElementById('modalIconWrap');
+const modalCloseBtn  = document.getElementById('modalCloseBtn');
+
+// Icon mapping per project
+const projectIcons = {
+    bookcase:           'fas fa-book-open',
+    cryptapp:           'fab fa-bitcoin',
+    'bookcase-app':     'fas fa-layer-group',
+    'bookcase-dashboard':'fas fa-chart-bar',
+    'password-checker': 'fas fa-shield-alt',
+    'mini-games':       'fas fa-gamepad',
+    portfolio:          'fas fa-user-circle',
+    numberguess:        'fas fa-dice',
+};
+
+function openProjectModal(card) {
+    const title    = card.getAttribute('data-title');
+    const desc     = card.getAttribute('data-desc');
+    const tags     = card.getAttribute('data-tags').split(',');
+    const repo     = card.getAttribute('data-repo');
+    const live     = card.getAttribute('data-live');
+    const hasPages = card.getAttribute('data-has-pages') === 'true';
+    const project  = card.getAttribute('data-project');
+
+    // Set icon
+    const iconClass = projectIcons[project] || 'fas fa-code';
+    modalIconWrap.querySelector('i').className = iconClass;
+
+    // Set title
+    modalTitle.textContent = title;
+
+    // Set tags
+    modalTags.innerHTML = tags.map(t => `<span class="modal-tag">${t.trim()}</span>`).join('');
+
+    // Set description
+    modalDesc.textContent = desc;
+
+    // Build action buttons
+    let actionsHTML = '';
+    if (hasPages && live) {
+        actionsHTML += `<a href="${live}" target="_blank" rel="noopener" class="modal-btn modal-btn-primary">
+            <i class="fas fa-external-link-alt"></i> Visit Live Site
+        </a>`;
+    }
+    actionsHTML += `<a href="${repo}" target="_blank" rel="noopener" class="modal-btn modal-btn-outline">
+        <i class="fab fa-github"></i> View on GitHub
+    </a>`;
+    modalActions.innerHTML = actionsHTML;
+
+    // Show modal
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Attach click listener to each "View Details" button inside cards
+document.querySelectorAll('.portfolio-card').forEach(card => {
+    const btn = card.querySelector('.p-link-btn');
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openProjectModal(card);
+        });
+    }
+    // Also clicking the card image area opens modal
+    card.querySelector('.portfolio-card-image').addEventListener('click', () => {
+        openProjectModal(card);
+    });
+});
+
+// Close on X button
+modalCloseBtn.addEventListener('click', closeProjectModal);
+
+// Close on overlay background click
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeProjectModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeProjectModal();
+    }
 });
 
 
